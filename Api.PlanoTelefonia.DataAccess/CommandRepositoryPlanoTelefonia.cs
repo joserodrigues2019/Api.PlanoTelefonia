@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Api.PlanoTelefonia.DataAccess
 {
-    public class CommandRepositoryPlanoTelefonia<T> :ICommandRepositorySimnac<T> where T : BaseEntity
+    public class CommandRepositoryPlanoTelefonia<T> :ICommandRepositoryPlanoTelefonia<T> where T : BaseEntity
     {
         private readonly IDatabaseContextPlanoTelefonia _dbContextPlanoTelefonia;
 
