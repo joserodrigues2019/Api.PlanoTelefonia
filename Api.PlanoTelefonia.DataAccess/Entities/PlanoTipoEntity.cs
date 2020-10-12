@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Api.PlanoTelefonia.DataAccess.Entities
 {
     [Table("PLANO_TIPO")]
-    public class PlanoTipoEntity
+    public class PlanoTipoEntity : BaseEntity
     {
         [Key]
         [Column("PLANO_ID_TIPO")]
