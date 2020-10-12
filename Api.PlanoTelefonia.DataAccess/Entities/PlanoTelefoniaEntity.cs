@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Api.PlanoTelefonia.DataAccess.Entities
 {
     [Table("PLANO_TELEFONIA")]
-    public class PlanoTelefoniaEntity
+    public class PlanoTelefoniaEntity: BaseEntity
     {
         public virtual PlanoTipoEntity PlanoTipo { get; set; }
 

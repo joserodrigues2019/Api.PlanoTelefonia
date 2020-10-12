@@ -52,8 +52,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseEntity.cs" />
+    <Compile Include="CommandRepositoryPlanoTelefonia.cs" />
+    <Compile Include="ConfigureEntities\ConfigurePlanoTelefonia.cs" />
+    <Compile Include="Context\DatabaseContextPlanoTelefonia.cs" />
+    <Compile Include="Context\IDatabaseContextPlanoTelefonia.cs" />
     <Compile Include="Entities\PlanoTelefoniaEntity.cs" />
     <Compile Include="Entities\PlanoTipoEntity.cs" />
+    <Compile Include="ICommandRepositoryPlanoTelefonia.cs" />
+    <Compile Include="ICommandRepositorySimnac.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
