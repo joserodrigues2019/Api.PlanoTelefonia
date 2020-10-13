@@ -1,6 +1,8 @@
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Formatting;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -14,10 +16,32 @@ namespace Api.PlanoTelefonia.ApplicationService
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-            GlobalConfiguration.Configure(WebApiConfig.Register);
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //GlobalConfiguration.Configure(WebApiConfig.Register);
+
+            // Configure Formatters
+            // https://stackoverflow.com/questions/25224824/how-to-change-default-web-api-2-to-json-formatter
+            GlobalConfiguration.Configuration.Formatters.Clear();
+            GlobalConfiguration.Configuration.Formatters.Add(new JsonMediaTypeFormatter());
+
+            // Configure Camelcase Properties
+            // https://stackoverflow.com/questions/22130431/web-api-serialize-properties-starting-from-lowercase-letter
+            GlobalConfiguration
+                .Configuration
+                .Formatters
+                .JsonFormatter
+                .SerializerSettings
+                .ContractResolver = new CamelCasePropertyNamesContractResolver();
+
+
+            //FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            //RouteConfig.RegisterRoutes(RouteTable.Routes);
+            //BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            GlobalConfiguration.Configuration.Routes
+                                .MapHttpRoute("Default",
+                                "{controller}/{id}",
+                                new { id = RouteParameter.Optional }
+                                );
         }
     }
 }
