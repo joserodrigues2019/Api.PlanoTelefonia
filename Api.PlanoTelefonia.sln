@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.PlanoTelefonia.ApplicationService", "Api.PlanoTelefonia.ApplicationService\Api.PlanoTelefonia.ApplicationService.csproj", "{30C7975E-FFDA-47D4-9C97-53E3F6002BD3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.PlanoTelefonia.BussinesLogic", "Api.PlanoTelefonia.BussinesLogic\Api.PlanoTelefonia.BussinesLogic.csproj", "{338E8136-6261-4652-8D83-AF6D078ADA61}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.PlanoTelefonia.CrossCutting.DataTransferObject", "Api.PlanoTelefonia.CrossCutting.DataTransferObject\Api.PlanoTelefonia.CrossCutting.DataTransferObject.csproj", "{236B8504-31D4-4AC5-8383-E4E19ED40A88}"
@@ -15,16 +13,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.PlanoTelefonia.CrossCut
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.PlanoTelefonia.DataAccess", "Api.PlanoTelefonia.DataAccess\Api.PlanoTelefonia.DataAccess.csproj", "{215FE5C4-A55B-467B-9D62-4B4984BB23DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.PlanoTelefonia.ApplicationService", "Api.PlanoTelefonia.ApplicationService\Api.PlanoTelefonia.ApplicationService.csproj", "{ECF8CB45-BF4C-4966-9964-F07AC1BB50A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{30C7975E-FFDA-47D4-9C97-53E3F6002BD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{30C7975E-FFDA-47D4-9C97-53E3F6002BD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{30C7975E-FFDA-47D4-9C97-53E3F6002BD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{30C7975E-FFDA-47D4-9C97-53E3F6002BD3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{338E8136-6261-4652-8D83-AF6D078ADA61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{338E8136-6261-4652-8D83-AF6D078ADA61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{338E8136-6261-4652-8D83-AF6D078ADA61}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{215FE5C4-A55B-467B-9D62-4B4984BB23DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{215FE5C4-A55B-467B-9D62-4B4984BB23DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{215FE5C4-A55B-467B-9D62-4B4984BB23DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECF8CB45-BF4C-4966-9964-F07AC1BB50A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECF8CB45-BF4C-4966-9964-F07AC1BB50A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECF8CB45-BF4C-4966-9964-F07AC1BB50A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECF8CB45-BF4C-4966-9964-F07AC1BB50A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
