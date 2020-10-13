@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Api.PlanoTelefonia.BussinesLogic</RootNamespace>
     <AssemblyName>Api.PlanoTelefonia.BussinesLogic</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,8 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IPlanoTelefoniaBll.cs" />
     <Compile Include="PlanoTelefoniaBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Api.PlanoTelefonia.CrossCutting.DataTransferObject\Api.PlanoTelefonia.CrossCutting.DataTransferObject.csproj">
+      <Project>{236b8504-31d4-4ac5-8383-e4e19ed40a88}</Project>
+      <Name>Api.PlanoTelefonia.CrossCutting.DataTransferObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Api.PlanoTelefonia.DataAccess\Api.PlanoTelefonia.DataAccess.csproj">
+      <Project>{215fe5c4-a55b-467b-9d62-4b4984bb23de}</Project>
+      <Name>Api.PlanoTelefonia.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
