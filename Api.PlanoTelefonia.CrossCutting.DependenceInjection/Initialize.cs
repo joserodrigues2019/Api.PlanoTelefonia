@@ -18,7 +18,7 @@ namespace Api.PlanoTelefonia.CrossCutting.DependenceInjetion
 			// 2. Configure the container (register) Data Access
 
 			Container.Options.ConstructorResolutionBehavior = new MostResolvableConstructorBehavior(Container);
-			Container.Register<IDatabaseContextPlanoTelefonia, DatabaseContextPlanoTelefonia>(lifeStyle);
+            Container.Register<IDatabaseContextPlanoTelefonia, DatabaseContextPlanoTelefonia>(lifeStyle);
 
 			//----
 

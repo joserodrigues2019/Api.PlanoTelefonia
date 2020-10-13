@@ -5,7 +5,7 @@ namespace Api.PlanoTelefonia.DataAccess
 {
     public interface IDatabaseContextPlanoTelefonia
     {
-        System.Data.Entity.Database Database { get; }
+        Database Database { get; }
 
         DbEntityEntry Entry(object entity);
 

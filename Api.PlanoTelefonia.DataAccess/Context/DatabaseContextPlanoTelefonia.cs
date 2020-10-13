@@ -1,4 +1,5 @@
 ﻿using Api.PlanoTelefonia.DataAccess.Entities;
+using System;
 using System.Data.Common;
 using System.Data.Entity;
 
@@ -13,11 +14,13 @@ namespace Api.PlanoTelefonia.DataAccess
         public DatabaseContextPlanoTelefonia() : base("name=DatabaseContextPlanoTelefonia")
         {
             System.Data.Entity.Database.SetInitializer<DatabaseContextPlanoTelefonia>(null);
+
+            Console.Write(Database.Log);
         }
 
         public DatabaseContextPlanoTelefonia(DbConnection dbConnection) : base(dbConnection, true)
         {
-            System.Data.Entity.Database.SetInitializer<DatabaseContextPlanoTelefonia>(null);
+            Database.SetInitializer<DatabaseContextPlanoTelefonia>(null);
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;
             Configuration.ValidateOnSaveEnabled = false;
