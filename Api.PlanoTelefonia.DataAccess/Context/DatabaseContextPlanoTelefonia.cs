@@ -15,7 +15,7 @@ namespace Api.PlanoTelefonia.DataAccess
         {
             System.Data.Entity.Database.SetInitializer<DatabaseContextPlanoTelefonia>(null);
 
-            //Console.Write(Database.Log);
+            Console.Write(Database.Log);
         }
 
         public DatabaseContextPlanoTelefonia(DbConnection dbConnection) : base(dbConnection, true)
