@@ -18,8 +18,7 @@ namespace Api.PlanoTelefonia.DataAccess
 
 		public List<U> Listar<U>(Expression<Func<T, bool>> predicate)
 		{
-			return null;
-			//return AutoMapper.Mapper.Map<List<U>>(this.Listar(predicate));
+			return AutoMapper.Mapper.Map<List<U>>(this.Listar(predicate));
 		}
 
 		/// <summary>
