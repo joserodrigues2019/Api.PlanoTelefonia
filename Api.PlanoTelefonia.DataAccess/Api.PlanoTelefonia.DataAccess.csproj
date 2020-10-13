@@ -65,10 +65,11 @@
     <Compile Include="Entities\PlanoTipoEntity.cs" />
     <Compile Include="ICommandRepositoryPlanoTelefonia.cs" />
     <Compile Include="ICommandStackPlanoTelefonia.cs" />
-    <Compile Include="ICommandStackPlanoTelefonia1.cs" />
     <Compile Include="IQueryRepositoryPlanoTelefonia.cs" />
+    <Compile Include="IQueryStackPlanoTelefonia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryRepositoryPlanoTelefonia.cs" />
+    <Compile Include="QueryStackPlanoTelefonia.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
