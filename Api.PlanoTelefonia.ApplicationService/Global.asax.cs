@@ -16,9 +16,6 @@ namespace Api.PlanoTelefonia.ApplicationService
     {
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
-            //GlobalConfiguration.Configure(WebApiConfig.Register);
-
             // Configure Formatters
             // https://stackoverflow.com/questions/25224824/how-to-change-default-web-api-2-to-json-formatter
             GlobalConfiguration.Configuration.Formatters.Clear();
@@ -32,11 +29,6 @@ namespace Api.PlanoTelefonia.ApplicationService
                 .JsonFormatter
                 .SerializerSettings
                 .ContractResolver = new CamelCasePropertyNamesContractResolver();
-
-
-            //FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            //RouteConfig.RegisterRoutes(RouteTable.Routes);
-            //BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             GlobalConfiguration.Configuration.Routes
                                 .MapHttpRoute("Default",
