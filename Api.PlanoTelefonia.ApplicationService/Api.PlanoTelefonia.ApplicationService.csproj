@@ -267,6 +267,10 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Api.PalnoTelefonia.CrossCutting.Mapping\Api.PlanoTelefonia.CrossCutting.Mapping.csproj">
+      <Project>{d6832a1e-6252-48f3-8ea0-dd6453c5d845}</Project>
+      <Name>Api.PlanoTelefonia.CrossCutting.Mapping</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Api.PlanoTelefonia.BussinesLogic\Api.PlanoTelefonia.BussinesLogic.csproj">
       <Project>{338e8136-6261-4652-8d83-af6d078ada61}</Project>
       <Name>Api.PlanoTelefonia.BussinesLogic</Name>
@@ -274,6 +278,10 @@
     <ProjectReference Include="..\Api.PlanoTelefonia.CrossCutting.DataTransferObject\Api.PlanoTelefonia.CrossCutting.DataTransferObject.csproj">
       <Project>{236b8504-31d4-4ac5-8383-e4e19ed40a88}</Project>
       <Name>Api.PlanoTelefonia.CrossCutting.DataTransferObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Api.PlanoTelefonia.CrossCutting.DependenceInjection\Api.PlanoTelefonia.CrossCutting.DependenceInjection.csproj">
+      <Project>{57d7f896-3b17-4d68-9aa5-d74d33205902}</Project>
+      <Name>Api.PlanoTelefonia.CrossCutting.DependenceInjection</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

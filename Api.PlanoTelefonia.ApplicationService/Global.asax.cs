@@ -1,4 +1,5 @@
 using Newtonsoft.Json.Serialization;
+using SimpleInjector.Integration.WebApi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,19 @@ namespace Api.PlanoTelefonia.ApplicationService
                                 "{controller}/{id}",
                                 new { id = RouteParameter.Optional }
                                 );
+
+            // Configure Dependence Injection
+            // Install: SimpleInjector.Integration.webapi
+            CrossCutting.DependenceInjetion.Initialize.InitScoped();
+
+            // This is an extension method from the integration package.
+            // CrossCutting.DependenceInjetion.Initialize.Container.regiRegisterWebApiControllers(GlobalConfiguration.Configuration);
+            GlobalConfiguration.Configuration.DependencyResolver =
+                new SimpleInjectorWebApiDependencyResolver(CrossCutting.DependenceInjetion.Initialize.Container);
+
+            // Configure AutoMapper
+            CrossCutting.Mapping.Initialize.Init();
+
         }
     }
 }
