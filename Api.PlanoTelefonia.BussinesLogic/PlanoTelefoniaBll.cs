@@ -20,7 +20,7 @@ namespace Api.PlanoTelefonia.BussinesLogic
         {
             var result = _query.PlanoTelefonia.Listar<PlanoTelefoniaVM>( l => l.Codigo == codigo);
 
-            return null;
+            return result;
         }
     }
 }
