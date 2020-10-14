@@ -6,5 +6,6 @@ namespace Api.PlanoTelefonia.BussinesLogic
     public interface IPlanoTelefoniaBll
     {
         List<PlanoTelefoniaVM> ListarPlanos(string codigo);
+        string SalvarPlanos(List<PlanoTelefoniaVM> listaPlano);
     }
 }

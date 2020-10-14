@@ -14,5 +14,11 @@ namespace Api.PlanoTelefonia.DataAccess
 
             PlanoTelefonia = new CommandRepositoryPlanoTelefonia<PlanoTelefoniaEntity>(_contextPlanoTelefonia);
         }
+
+        public void Save()
+        {
+            _contextPlanoTelefonia.SaveChanges();
+        }
+
     }
 }

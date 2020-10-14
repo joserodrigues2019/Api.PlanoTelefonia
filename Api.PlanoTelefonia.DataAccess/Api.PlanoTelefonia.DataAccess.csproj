@@ -90,6 +90,7 @@
     <Compile Include="Entities\PlanoTipoEntity.cs" />
     <Compile Include="ICommandRepositoryPlanoTelefonia.cs" />
     <Compile Include="ICommandStackPlanoTelefonia.cs" />
+    <Compile Include="IData.cs" />
     <Compile Include="IQueryRepositoryPlanoTelefonia.cs" />
     <Compile Include="IQueryStackPlanoTelefonia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

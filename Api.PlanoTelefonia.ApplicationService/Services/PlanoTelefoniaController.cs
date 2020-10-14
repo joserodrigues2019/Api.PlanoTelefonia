@@ -25,5 +25,14 @@ namespace Api.PlanoTelefonia.ApplicationService.Services
         {
             return _planotelefonia.ListarPlanos(codigo);
         }
+
+        /// <summary>Salva Novo Plano Telefonia</summary>
+        /// <param name="planoTelefoniaVM"></param>
+        /// <returns></returns>
+        public string Post([FromBody] IEnumerable<PlanoTelefoniaVM> planoTelefoniaVM)
+        {
+            return _planotelefonia.SalvarPlanos(planoTelefoniaVM.ToList());
+        }
+
     }
 }

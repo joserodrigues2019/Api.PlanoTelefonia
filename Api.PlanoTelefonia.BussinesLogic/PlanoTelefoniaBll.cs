@@ -1,6 +1,8 @@
 ﻿using Api.PlanoTelefonia.CrossCutting.DataTransferObject.ViewModel;
 using Api.PlanoTelefonia.DataAccess;
+using Api.PlanoTelefonia.DataAccess.Entities;
 using System.Collections.Generic;
+using System.Security.AccessControl;
 
 namespace Api.PlanoTelefonia.BussinesLogic
 {
@@ -21,6 +23,35 @@ namespace Api.PlanoTelefonia.BussinesLogic
             var result = _query.PlanoTelefonia.Listar<PlanoTelefoniaVM>( l => l.Codigo == codigo);
 
             return result;
+        }
+
+        public string SalvarPlanos(List<PlanoTelefoniaVM> listaPlano)
+        {
+            try
+            {
+                foreach (var item in listaPlano)
+                {
+                    var _planoEntity = new PlanoTelefoniaEntity()
+                    {
+                        Codigo = item.Codigo,
+                        Minutos = item.Minutos,
+                        FranquiaInternet = item.FranquiaInternet,
+                        Valor = item.Valor,
+                        IdPlanoTipo = item.IdPlanoTipo
+                    };
+                        _command.PlanoTelefonia.Salvar(_planoEntity);
+                }
+
+                _command.Save();
+
+                return "Registro Salvo";
+
+            }
+            catch (System.Exception ex)
+            {
+
+                throw new System.Exception(ex.Message.ToString());
+            }
         }
     }
 }

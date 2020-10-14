@@ -10,5 +10,7 @@ namespace Api.PlanoTelefonia.DataAccess
         DbEntityEntry Entry(object entity);
 
         DbSet<T> Set<T>() where T : class;
+
+        int SaveChanges();
     }
 }

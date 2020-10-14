@@ -2,6 +2,7 @@
 using System;
 using System.Data.Common;
 using System.Data.Entity;
+using System.Linq;
 
 namespace Api.PlanoTelefonia.DataAccess
 {
@@ -32,5 +33,31 @@ namespace Api.PlanoTelefonia.DataAccess
 
 			ConfigurePlanoTelefonia(modelBuilder);
 		}
+
+		public override int SaveChanges()
+		{
+			var objectStateEntries = ChangeTracker.Entries()
+			.Where(e => e.Entity is IData && (e.State == EntityState.Modified || e.State == EntityState.Added)).ToList();
+			var currentTime = DateTime.Now;
+
+			foreach (var entry in objectStateEntries)
+			{
+				var entityBase = entry.Entity as IData;
+				if (entityBase == null) continue;
+				if (entry.State == EntityState.Added)
+				{
+					entityBase.DataInclusao = currentTime;
+				}
+				else
+				{
+					entry.Property(nameof(IData.DataInclusao)).IsModified = false;
+				}
+
+				entityBase.DataAlteracao = currentTime;
+			}
+
+			return base.SaveChanges();
+		}
+
 	}
 }

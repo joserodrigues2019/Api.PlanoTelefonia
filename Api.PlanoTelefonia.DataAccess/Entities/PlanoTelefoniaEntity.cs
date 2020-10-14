@@ -9,11 +9,6 @@ namespace Api.PlanoTelefonia.DataAccess.Entities
     {
         public virtual PlanoTipoEntity PlanoTipo { get; set; }
 
-        public PlanoTelefoniaEntity()
-        {
-            PlanoTipo = new PlanoTipoEntity();
-        }
-
         [Key]
         [Column("PLANO_ID")]
         public int IdPlano { get; set; }
