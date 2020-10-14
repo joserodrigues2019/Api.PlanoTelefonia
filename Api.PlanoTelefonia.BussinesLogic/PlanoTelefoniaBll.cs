@@ -25,6 +25,35 @@ namespace Api.PlanoTelefonia.BussinesLogic
             return result;
         }
 
+        public string AlterarPlanos(List<PlanoTelefoniaVM> listaPlano)
+        {
+            foreach (var item in listaPlano)
+            {
+                var _planoEntity = new PlanoTelefoniaEntity()
+                {
+                    IdPlano = item.IdPlano,
+                    Codigo = item.Codigo,
+                    Minutos = item.Minutos,
+                    FranquiaInternet = item.FranquiaInternet,
+                    Valor = item.Valor,
+                    IdPlanoTipo = item.IdPlanoTipo
+                };
+                _command.PlanoTelefonia.Salvar(_planoEntity);
+            }
+
+            _command.Save();
+
+            return "Registro Alteado";
+
+        }
+
+        public string ExcluirPlano(int idPlano)
+        {
+            _command.PlanoTelefonia.Apagar(idPlano);
+            _command.Save();
+            return "Registro Excluído";
+        }
+
         public string SalvarPlanos(List<PlanoTelefoniaVM> listaPlano)
         {
             try

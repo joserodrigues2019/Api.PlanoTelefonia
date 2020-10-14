@@ -34,5 +34,19 @@ namespace Api.PlanoTelefonia.ApplicationService.Services
             return _planotelefonia.SalvarPlanos(planoTelefoniaVM.ToList());
         }
 
+        /// <summary>Salva o BatimentoSefaz</summary>
+        /// <param name="planoTelefoniaVM"></param>
+        /// <returns></returns>
+        public string Put([FromBody] IEnumerable<PlanoTelefoniaVM> planoTelefoniaVM)
+        {
+            return _planotelefonia.AlterarPlanos(planoTelefoniaVM.ToList());
+        }
+
+        /// <summary>Deletar arquivos anexos de transporte pelo ID</summary>
+        /// <param name="idPlano">ID Arquivo Anexo</param>
+        public string Delete(int idPlano)
+        {
+            return _planotelefonia.ExcluirPlano(idPlano);
+        }
     }
 }
