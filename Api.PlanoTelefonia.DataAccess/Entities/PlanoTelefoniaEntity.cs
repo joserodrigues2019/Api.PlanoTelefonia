@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Reflection;
 
 namespace Api.PlanoTelefonia.DataAccess.Entities
 {
@@ -37,5 +38,9 @@ namespace Api.PlanoTelefonia.DataAccess.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [Column("PLANO_DATA_CADASTRO")]
         public DateTime DataCadastro { get; set; }
+
+        [Required]
+        [Column("PLANO_DDD")]
+        public int DDD { get; set; }
     }
 }
