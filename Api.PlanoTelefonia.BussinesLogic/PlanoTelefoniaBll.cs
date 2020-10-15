@@ -18,11 +18,38 @@ namespace Api.PlanoTelefonia.BussinesLogic
             _query = query;
         }
 
-        public List<PlanoTelefoniaVM> ListarPlanos(string codigo)
+        public List<PlanoTelefoniaVM> ListarPlanosCodigo(string codigo)
         {
             var result = _query.PlanoTelefonia.Listar<PlanoTelefoniaVM>( l => l.Codigo == codigo);
 
             return result;
+        }
+
+        private List<PlanoTelefoniaVM> ListarPlanosTodos(ParametrosConsultaPlanoVM parametros)
+        {
+            List<PlanoTelefoniaVM> resultBusca = null;
+
+            // Verificar os parametros para buscar o plano
+            if (!string.IsNullOrEmpty(parametros.Codigo))
+            {
+                resultBusca = _query.PlanoTelefonia.Listar<PlanoTelefoniaVM>(l => l.Codigo == parametros.Codigo);
+            }
+            else if (!string.IsNullOrEmpty(parametros.Operadora))
+            {
+                resultBusca = _query.PlanoTelefonia.Listar<PlanoTelefoniaVM>(o => o.Operadora == parametros.Operadora);
+            }
+            else if (!string.IsNullOrEmpty(parametros.PlanoTipo))
+            {
+                int selIdPlanTipo = _query.PlanoTipo.Selecionar(s => s.DescricaoTipo == parametros.PlanoTipo).IdPlanoTipo;
+
+                resultBusca = _query.PlanoTelefonia.Listar<PlanoTelefoniaVM>(b => b.IdPlanoTipo == selIdPlanTipo);
+            }
+            else
+            { //Todos Planos
+                resultBusca = _query.PlanoTelefonia.Listar<PlanoTelefoniaVM>(b => b.IdPlano > 0);
+            }
+
+            return resultBusca;
         }
 
         public string AlterarPlanos(List<PlanoTelefoniaVM> listaPlano)

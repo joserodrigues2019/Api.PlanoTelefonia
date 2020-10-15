@@ -5,7 +5,9 @@ namespace Api.PlanoTelefonia.BussinesLogic
 {
     public interface IPlanoTelefoniaBll
     {
-        List<PlanoTelefoniaVM> ListarPlanos(string codigo);
+        List<PlanoTelefoniaVM> ListarPlanosCodigo(string codigo);
+        List<PlanoTelefoniaVM> ListarPlanosTodos(ParametrosConsultaPlanoVM parametros);
+
         string SalvarPlanos(List<PlanoTelefoniaVM> listaPlano);
         string AlterarPlanos(List<PlanoTelefoniaVM> listaPlano);
         string ExcluirPlano(int idPlano);
