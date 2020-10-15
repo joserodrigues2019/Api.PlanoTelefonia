@@ -1,0 +1,23 @@
+Solução para o Desafio: Desenvolvedor Back-End C#.Net
+
+Nome da API: Api.PlanoTelefonia
+Nome Banco de Dados: AFJ
+
+Arquitetura API:
+Projeto tipo Web API
+
+.Net Framework
+EntityFramwork.Net
+Sql Server Express 2019
+
+Modelo: MVC
+Camadas ==>>
+Controler - Appliation Services
+Bussines Logic - BLL
+CrossCutting DTO - ViewModel - VM
+CrossCutting DependenceInjection - Injeção de Dependencia - SimpleInjector
+CrossCutting Mapping - Automapper Entity
+DatabaseAccess - Model Entity
+
+IDE: Visual Studio Community 2019
+SQL Server Express 2019
