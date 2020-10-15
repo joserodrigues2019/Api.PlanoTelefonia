@@ -23,7 +23,15 @@ namespace Api.PlanoTelefonia.ApplicationService.Services
         /// <returns></returns>
         public List<PlanoTelefoniaVM> Get([FromUri] string codigo)
         {
-            return _planotelefonia.ListarPlanos(codigo);
+            return _planotelefonia.ListarPlanosCodigo(codigo);
+        }
+
+        /// <summary>Consultar pelo codigo</summary>
+        /// <param name="parametros"></param>
+        /// <returns></returns>
+        public List<PlanoTelefoniaVM> Get([FromBody] IEnumerable<ParametrosConsultaPlanoVM> parametros)
+        {
+            return _planotelefonia.ListarPlanosTodos(parametros);
         }
 
         /// <summary>Salva Novo Plano Telefonia</summary>

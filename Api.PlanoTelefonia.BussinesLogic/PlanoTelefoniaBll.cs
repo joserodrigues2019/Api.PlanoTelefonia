@@ -25,29 +25,35 @@ namespace Api.PlanoTelefonia.BussinesLogic
             return result;
         }
 
-        private List<PlanoTelefoniaVM> ListarPlanosTodos(ParametrosConsultaPlanoVM parametros)
+        public List<PlanoTelefoniaVM> ListarPlanosTodos(IEnumerable<ParametrosConsultaPlanoVM> parametros)
         {
             List<PlanoTelefoniaVM> resultBusca = null;
 
             // Verificar os parametros para buscar o plano
-            if (!string.IsNullOrEmpty(parametros.Codigo))
-            {
-                resultBusca = _query.PlanoTelefonia.Listar<PlanoTelefoniaVM>(l => l.Codigo == parametros.Codigo);
-            }
-            else if (!string.IsNullOrEmpty(parametros.Operadora))
-            {
-                resultBusca = _query.PlanoTelefonia.Listar<PlanoTelefoniaVM>(o => o.Operadora == parametros.Operadora);
-            }
-            else if (!string.IsNullOrEmpty(parametros.PlanoTipo))
-            {
-                int selIdPlanTipo = _query.PlanoTipo.Selecionar(s => s.DescricaoTipo == parametros.PlanoTipo).IdPlanoTipo;
 
-                resultBusca = _query.PlanoTelefonia.Listar<PlanoTelefoniaVM>(b => b.IdPlanoTipo == selIdPlanTipo);
+            foreach (var itemp in parametros)
+            {
+                if (!string.IsNullOrEmpty(itemp.Codigo))
+                {
+                    resultBusca = _query.PlanoTelefonia.Listar<PlanoTelefoniaVM>(l => l.Codigo == itemp.Codigo);
+                }
+                else if (!string.IsNullOrEmpty(itemp.Operadora))
+                {
+                    resultBusca = _query.PlanoTelefonia.Listar<PlanoTelefoniaVM>(o => o.Operadora == itemp.Operadora);
+                }
+                else if (!string.IsNullOrEmpty(itemp.PlanoTipo))
+                {
+                    int selIdPlanTipo = _query.PlanoTipo.Selecionar(s => s.DescricaoTipo == itemp.PlanoTipo).IdPlanoTipo;
+
+                    resultBusca = _query.PlanoTelefonia.Listar<PlanoTelefoniaVM>(b => b.IdPlanoTipo == selIdPlanTipo);
+                }
+                else
+                { //Todos Planos
+                    resultBusca = _query.PlanoTelefonia.Listar<PlanoTelefoniaVM>(b => b.IdPlano > 0);
+                }
+
             }
-            else
-            { //Todos Planos
-                resultBusca = _query.PlanoTelefonia.Listar<PlanoTelefoniaVM>(b => b.IdPlano > 0);
-            }
+
 
             return resultBusca;
         }
