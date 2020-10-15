@@ -11,5 +11,8 @@ namespace Api.PlanoTelefonia.DataAccess
         List<T> Listar(Expression<Func<T, bool>> filter = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
                 string includeProperties = "");
+        T Selecionar(Expression<Func<T, bool>> predicate);
+
+        U Selecionar<U>(Expression<Func<T, bool>> predicate);
     }
 }

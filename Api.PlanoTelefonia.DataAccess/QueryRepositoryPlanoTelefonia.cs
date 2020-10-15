@@ -59,5 +59,24 @@ namespace Api.PlanoTelefonia.DataAccess
 			}
 		}
 
+		public T Selecionar(Expression<Func<T, bool>> predicate)
+		{
+			return _dbContext
+				.Set<T>()
+				.AsNoTracking()
+				.SingleOrDefault(predicate);
+		}
+
+		public U Selecionar<U>(Expression<Func<T, bool>> predicate)
+		{
+			var entity = _dbContext
+				.Set<T>()
+				.AsNoTracking()
+				.SingleOrDefault(predicate);
+
+			return AutoMapper.Mapper.Map<U>(entity);
+		}
+
+
 	}
 }
