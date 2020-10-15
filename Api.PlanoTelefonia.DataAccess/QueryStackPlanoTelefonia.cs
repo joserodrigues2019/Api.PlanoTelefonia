@@ -7,12 +7,14 @@ namespace Api.PlanoTelefonia.DataAccess
         private readonly IDatabaseContextPlanoTelefonia _contextPlanoTelefonia;
 
         public IQueryRepositoryPlanoTelefonia<PlanoTelefoniaEntity> PlanoTelefonia { get; }
+        public IQueryRepositoryPlanoTelefonia<PlanoTipoEntity> PlanoTipo { get; set; }
 
         public QueryStackPlanoTelefonia(IDatabaseContextPlanoTelefonia contextPlanoTelefonia)
         {
             _contextPlanoTelefonia = contextPlanoTelefonia;
 
             PlanoTelefonia = new QueryRepositoryPlanoTelefonia<PlanoTelefoniaEntity>(_contextPlanoTelefonia);
+            PlanoTipo = new QueryRepositoryPlanoTelefonia<PlanoTipoEntity>(_contextPlanoTelefonia);
         }
     }
 }

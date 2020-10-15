@@ -84,6 +84,7 @@
     <Compile Include="CommandRepositoryPlanoTelefonia.cs" />
     <Compile Include="CommandStackPlanoTelefonia.cs" />
     <Compile Include="ConfigureEntities\ConfigurePlanoTelefonia.cs" />
+    <Compile Include="ConfigureEntities\ConfigurePlanoTipo.cs" />
     <Compile Include="Context\DatabaseContextPlanoTelefonia.cs" />
     <Compile Include="Context\IDatabaseContextPlanoTelefonia.cs" />
     <Compile Include="Entities\PlanoTelefoniaEntity.cs" />

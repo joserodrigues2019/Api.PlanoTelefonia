@@ -9,6 +9,7 @@ namespace Api.PlanoTelefonia.DataAccess
 	public partial class DatabaseContextPlanoTelefonia : DbContext, IDatabaseContextPlanoTelefonia
 	{
 		public virtual DbSet<PlanoTelefoniaEntity> PlanoTelefonia { get; set; }
+		public virtual DbSet<PlanoTipoEntity> PlanoTipo { get; set; }
 
 		private string nomeSchema = "dbo";
 
@@ -16,7 +17,7 @@ namespace Api.PlanoTelefonia.DataAccess
         {
             System.Data.Entity.Database.SetInitializer<DatabaseContextPlanoTelefonia>(null);
 
-            Console.Write(Database.Log);
+            //Console.Write(Database.Log);
         }
 
         public DatabaseContextPlanoTelefonia(DbConnection dbConnection) : base(dbConnection, true)
@@ -32,6 +33,7 @@ namespace Api.PlanoTelefonia.DataAccess
 			modelBuilder.HasDefaultSchema(nomeSchema);
 
 			ConfigurePlanoTelefonia(modelBuilder);
+			ConfigurePlanoTipo(modelBuilder);
 		}
 
 		public override int SaveChanges()
