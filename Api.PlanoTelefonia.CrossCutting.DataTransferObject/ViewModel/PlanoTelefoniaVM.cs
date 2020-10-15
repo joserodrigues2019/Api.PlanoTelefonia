@@ -14,5 +14,7 @@ namespace Api.PlanoTelefonia.CrossCutting.DataTransferObject.ViewModel
         public int DDD { get; set; }
         public string Operadora { get; set; }
 
+        public PlanoTipoVM  PlanoTipo { get; set; }
+
     }
 }
