@@ -42,5 +42,11 @@ namespace Api.PlanoTelefonia.DataAccess.Entities
         [Required]
         [Column("PLANO_DDD")]
         public int DDD { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        [Column("PLANO_OPERADORA")]
+        public string Operadora { get; set; }
+
     }
 }

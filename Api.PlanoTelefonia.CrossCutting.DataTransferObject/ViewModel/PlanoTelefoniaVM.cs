@@ -12,6 +12,7 @@ namespace Api.PlanoTelefonia.CrossCutting.DataTransferObject.ViewModel
         public int IdPlanoTipo { get; set; }
         public DateTime DataCadastro { get; set; }
         public int DDD { get; set; }
+        public string Operadora { get; set; }
 
     }
 }

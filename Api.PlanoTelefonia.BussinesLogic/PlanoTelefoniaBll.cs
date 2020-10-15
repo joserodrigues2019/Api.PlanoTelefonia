@@ -37,7 +37,8 @@ namespace Api.PlanoTelefonia.BussinesLogic
                     FranquiaInternet = item.FranquiaInternet,
                     Valor = item.Valor,
                     IdPlanoTipo = item.IdPlanoTipo,
-                    DDD = item.DDD
+                    DDD = item.DDD,
+                    Operadora = item.Operadora
                 };
                 _command.PlanoTelefonia.Salvar(_planoEntity);
             }
@@ -68,7 +69,8 @@ namespace Api.PlanoTelefonia.BussinesLogic
                         FranquiaInternet = item.FranquiaInternet,
                         Valor = item.Valor,
                         IdPlanoTipo = item.IdPlanoTipo,
-                        DDD = item.DDD
+                        DDD = item.DDD,
+                        Operadora = item.Operadora
                     };
                         _command.PlanoTelefonia.Salvar(_planoEntity);
                 }
